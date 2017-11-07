@@ -1,0 +1,4 @@
+---
+# defaults file for perfsonar-toolkit
+web_user: perfsonar
+pf_package: perfsonar-toolkit

@@ -1,0 +1,4 @@
+{
+  "tests/test_default.py::test_perfsonar_package[ansible://CentOS7]": true, 
+  "tests/test_default.py::test_perfsonar_package[ansible://Wheezy]": true
+}

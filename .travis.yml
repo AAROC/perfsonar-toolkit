@@ -18,7 +18,7 @@ script:
   - molecule converge
   - molecule idempotence
 # not you  - molecule lint
-  - molecule side_effect
+  - molecule side-effect
   - molecule verify
   - molecule  destroy
 

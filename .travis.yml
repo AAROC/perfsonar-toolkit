@@ -1,22 +1,31 @@
+---
 language: python
 python:
-- '2.7'
-- '3.3'
-- pypy
+  - '2.7'
 sudo: required
 services:
-- docker
+  - docker
 before_install:
-- sudo apt-get -qq update
+  - sudo apt-get -qq update
 install:
-- pip install molecule
-- pip install docker
+  - pip install molecule
+  - pip install docker
 script:
-- molecule test
+  - molecule destroy
+  - molecule dependency
+  - molecule syntax
+  - molecule create
+  - molecule converge
+  - molecule idempotence
+# not you  - molecule lint
+  - molecule side_effect
+  - molecule verify
+  - molecule  destroy
+
 notifications:
   slack:
-    on_success: change # default: always
-    on_failure: always # default: always
+    on_success: change    # default: always
+    on_failure: always    # default: always
     on_pull_requests: true
     template:
       - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository}@%{branch} by %{author} %{result} in %{duration}"

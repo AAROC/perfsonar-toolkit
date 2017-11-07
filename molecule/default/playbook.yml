@@ -2,5 +2,5 @@
 - name: Converge
   hosts: all
   roles:
-    - {role: perfsonar-base, become: true}
-    - {role: perfsonar-toolkit, become: true}
+    - { role: AAROC.perfsonar-base, become: true}
+    - { role: perfsonar-toolkit, become: true}
